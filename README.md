@@ -1,6 +1,8 @@
 # 🚀 Trajectory Control with APF & Real-Time Visualization on Gazebo Classic  
 ROS2 · Python · Gazebo Classic · Obstacle Avoidance · Real Rover Deployment
 
+for test videos : https://drive.google.com/drive/folders/1FLtNbTHER0-Lv9PNmAXSwXuack4JOYUd?usp=sharing
+
 This repository demonstrates multi-goal autonomous navigation for a differential-drive robot using the **Artificial Potential Field (APF)** algorithm with **real-time visualization** of robot path and heading error. The system runs in **Gazebo Classic**, and has also been **tested on a real-world rover**, validating simulation-to-reality transfer.
 
 ---
