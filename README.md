@@ -9,46 +9,47 @@ This repository demonstrates multi-goal autonomous navigation for a differential
 
 APF treats navigation as motion within a potential field, where:
 
-- The **goal** attracts the robot
-- **Obstacles** repel the robot
-- The robot follows the **resultant force vector**
+- The goal attracts the robot
+- Obstacles repel the robot
+- The robot follows the resultant force vector
 
 ### **Total Potential Field**
-\[
+$$
 U_{\text{total}}(q) = U_{\text{att}}(q) + \sum_{i=1}^{N} U_{\text{rep},i}(q)
-\]
+$$
 
 ### **Attractive Potential**
-\[
+$$
 U_{\text{att}}(q) = \frac{1}{2} k_{\text{att}} \| q - q_{\text{goal}} \|^2
-\]
+$$
 
 ### **Repulsive Potential**
-\[
+$$
 U_{\text{rep},i}(q) =
 \begin{cases}
 \frac{1}{2} k_{\text{rep}} \left( \frac{1}{d(q,q_{\text{obs},i})} - \frac{1}{d_0} \right)^2, & \text{if } d(q,q_{\text{obs},i}) \le d_0 \\
 0, & \text{if } d(q,q_{\text{obs},i}) > d_0
 \end{cases}
-\]
+$$
 
-Where:  
-- \( d(q,q_{\text{obs},i}) \) is distance to obstacle \(i\)  
-- \( d_0 \) is the influence radius for obstacles  
+Where:
+
+- \( d(q,q_{\text{obs},i}) \) is distance to obstacle \(i\)
+- \( d_0 \) is the influence radius for obstacles
 
 ### **Force Calculations**
-\[
+$$
 \mathbf{F}_{\text{att}} = -\nabla U_{\text{att}}
-\]
-\[
+$$
+$$
 \mathbf{F}_{\text{rep}} = -\sum_{i=1}^{N} \nabla U_{\text{rep},i}
-\]
-\[
+$$
+$$
 \mathbf{F} = \mathbf{F}_{\text{att}} + \mathbf{F}_{\text{rep}}
-\]
+$$
 
 The resultant force vector determines robot motion direction.  
-In differential-drive robots this force is converted into linear and angular velocity.
+In differential-drive robots this force is converted into linear and angular velocity commands.
 
 ---
 
